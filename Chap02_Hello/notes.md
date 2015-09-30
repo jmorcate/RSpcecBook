@@ -1,7 +1,6 @@
 # Installation
-1. I haven't install the recomended **rspec** version but the last one, that 
+* I haven't install the recomended **rspec** version but the last one, that 
 hapens so be **3.3.2**:
-
 ```console
 jmorcate@rspec_book:~/workspace $ gem install rspec
 Fetching: diff-lcs-1.2.5.gem (100%)
@@ -20,7 +19,7 @@ Successfully installed rspec-3.3.0
 jmorcate@rspec_book:~/workspace $ rspec -v
 3.3.2
 ```
-2. Same with cucumber: the installed version is: 2.1.0 instead of 0.9.2.
+* Same with cucumber: the installed version is: 2.1.0 instead of 0.9.2.
 ```console
 jmorcate@rspec_book:~/workspace $ gem install cucumber
 Fetching: multi_test-0.1.2.gem (100%)
@@ -36,7 +35,7 @@ jmorcate@rspec_book:~/workspace $ cucumber --version
 2.1.0
 ```
 
-* Running RSpec
+# Running RSpec
 
 When I try to define Greeter in my spec directory I get:
 
@@ -75,3 +74,29 @@ rspec ./greeter_spec.rb:8 # RSpec Greeter should say 'Hello RSpec! when it recei
 
 It was hard to realize but there is a spelling error in the greet return by
 our class. It's **"Rspec"** while should be **"RSpec"**.
+
+## Deprecation warnings
+
+Since I have deprecation warnings I guess that the interface has changed. The 
+new interface for the matchers is expect and is documented in
+https://relishapp.com/rspec/rspec-expectations/v/3-3/docs in my case I should
+replace the line:
+```ruby
+       greeting.should == "Hello RSpec!"
+```
+by:
+```ruby
+       expect(greeting).to eq(""Hello RSpec!")
+```
+Note that if I use:
+```ruby
+       expect(greeting).to be(""Hello RSpec!")
+```
+instead, I got the following error message:
+```console
+  1) RSpec Greeter should say 'Hello RSpec! when it receives the greet() message
+     Failure/Error: expect(greeting).to be("Hello RSpec!")
+       
+       expected #<String:18385280> => "Hello RSpec!"
+            got #<String:18385320> => "Hello RSpec!"
+```       
