@@ -36,5 +36,26 @@ jmorcate@rspec_book:~/workspace $ cucumber --version
 2.1.0
 ```
 
+* Running RSpec
+
+When I try to define Greeter in my spec directory I get:
+
+```console
+jmorcate@rspcecbook:~/workspace/Chap02_Hello (master) $ rspec greeter_spec.rb 
+F
+
+
+If you need more of the backtrace for any of these deprecations to
+identify where to make the necessary changes, you can configure
+`config.raise_errors_for_deprecations!`, and it will turn the
+deprecation warnings into errors, giving you the full backtrace.
+
+1 deprecation warning total
+
+Finished in 0.03005 seconds (files took 0.16981 seconds to load)
+1 example, 1 failure
+Failed examples:
+rspec ./greeter_spec.rb:8 # RSpec Greeter should say 'Hello RSpec! when it receives the greet() message
+```
 
 
