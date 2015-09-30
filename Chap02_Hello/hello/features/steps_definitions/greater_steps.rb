@@ -1,4 +1,6 @@
 class CucumberGreeter 
+    def greet
+    end
 end
 
 Given(/^a greeter$/) do
