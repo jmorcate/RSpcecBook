@@ -1,5 +1,8 @@
+class CucumberGreeter 
+end
+
 Given(/^a greeter$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @cucumber = CucumberGreeter.new
 end
 
 When(/^I send it the greet message$/) do
