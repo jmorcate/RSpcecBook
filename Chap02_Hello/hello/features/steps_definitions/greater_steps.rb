@@ -6,7 +6,7 @@ Given(/^a greeter$/) do
 end
 
 When(/^I send it the greet message$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @message = @cucumber.greet
 end
 
 Then(/^I should see "([^"]*)"$/) do |arg1|
