@@ -44,6 +44,18 @@ When I try to define Greeter in my spec directory I get:
 jmorcate@rspcecbook:~/workspace/Chap02_Hello (master) $ rspec greeter_spec.rb 
 F
 
+Failures:
+
+  1) RSpec Greeter should say 'Hello RSpec! when it receives the greet() message
+     Failure/Error: greeting.should == "Hello RSpec!"
+       expected: "Hello RSpec!"
+            got: "Hello Rspec!" (using ==)
+     # ./greeter_spec.rb:11:in `block (2 levels) in <top (required)>'
+
+Deprecation Warnings:
+
+Using `should` from rspec-expectations' old `:should` syntax without explicitly enabling the syntax is deprecated. Use the new `:expect` syntax or explicitly enable `:should` with `config.expect_with(:rspec) { |c| c.syntax = :should }` instead. Called from /home/ubuntu/workspace/Chap02_Hello/greeter_spec.rb:11:in `block (2 levels) in <top (required)>'.
+
 
 If you need more of the backtrace for any of these deprecations to
 identify where to make the necessary changes, you can configure
@@ -52,10 +64,14 @@ deprecation warnings into errors, giving you the full backtrace.
 
 1 deprecation warning total
 
-Finished in 0.03005 seconds (files took 0.16981 seconds to load)
+Finished in 0.02933 seconds (files took 0.20593 seconds to load)
 1 example, 1 failure
+
 Failed examples:
+
 rspec ./greeter_spec.rb:8 # RSpec Greeter should say 'Hello RSpec! when it receives the greet() message
+
 ```
 
-
+It was hard to realize but there is a spelling error in the greet return by
+our class. It's **"Rspec"** while should be **"RSpec"**.
